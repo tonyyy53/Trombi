@@ -1,0 +1,107 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <title>Trombi</title>
+  <script>let $ = require('jquery');</script>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script>require('popper.js');</script>
+  <script>require('bootstrap');</script>
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron pt-2 pb-2">
+      <h1 class="display-5">Trombinoscope</h1>
+      <p class="lead"></p>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="card text-center mt-2">
+            <div class="card-body">
+              <div class="numberCircle">1</div>
+              <p class="card-text"><small>Selectionner le dossier contenant les photos originales</small></p>
+              <button class="btn btn-primary" id="dossier_originales_btn"><i class="bi bi-folder"></i> Source</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card text-center mt-2">
+            <div class="card-body">
+              <div class="numberCircle">2</div>
+              <p class="card-text"><small>Selectionner le dossier que recevera les photos recardrées</small></p>
+              <button class="btn btn-primary" id="dossier_recadrees_btn"><i class="bi bi-folder"></i>
+                Destination</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card text-center mt-2">
+            <div class="card-body">
+              <div class="numberCircle">3</div>
+              <button class="btn btn-success btn-lg mt-3" id="trombi_btn"><i class="bi bi-play-circle"></i>&nbsp;Créer
+                un trombinoscope</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dossier_originales"></div>
+      <div id="dossier_recadrees"></div>
+
+    </div>
+    <div class="row mt-3" id="navig">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4">
+            <button class="btn btn-outline-primary btn-sm" id="photo_prem"><i class="bi bi-skip-start-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="photo_prec"><i class="bi bi-rewind-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="photo_suiv"><i class="bi bi-fast-forward-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="photo_dern"><i class="bi bi-skip-forward-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="photo_recadrer"><i class="bi bi-app"></i>&nbsp;Recadrer</button>
+          </div>
+          <div class="col-1">
+            <p class="m-0" id="infos_photos"></p>
+          </div>
+          <div class="col-7">
+
+            <input class="form-control form-control-sm  w-50" size=100 id="identite" type="text" placeholder="Identité">
+            <input type="hidden" id="ext">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row mt-3">
+
+      <div class="col-6 case_original">
+        <p class="mb-0"><strong>Originale</strong></p>
+        <div class="apercu">
+          <img id=original_img src="" class="img-fluid original" alt="...">
+          <div class="cache"></div>
+        </div>
+      </div>
+      <div class="col-6 case_recadree">
+        <p class="mb-0"><strong>Recadrée</strong></p>
+        <div id="recadree_box">
+          <div id="recadree">
+            <img id=recadree_img src="" class="img-fluid recadree_s" alt="...">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id='info'></div>
+  </div>
+  <script src="./renderer.js"></script>
+</body>
+
+</html>

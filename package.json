@@ -1,0 +1,74 @@
+{
+  "name": "trombi",
+  "version": "1.0.0",
+  "description": "Création de trombinoscopes.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "author": "",
+  "license": "ISC",
+  "mac": {
+    "icon": "./images/trombi.icns",
+    "category": "public.app-category.utilities"
+  },
+  "win": {
+    "icon": "./images/trombi.png"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-dmg": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@electron-forge/publisher-github": "^6.4.2",
+    "electron": "^26.3.0"
+  },
+  "dependencies": {
+    "appdmg": "^0.6.6",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "fix-path": "^3.0.0",
+    "html-to-image": "^1.11.11",
+    "jquery": "^3.7.1",
+    "jspdf": "^2.5.1",
+    "popper.js": "^1.16.1",
+    "update-electron-app": "^2.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "config": {
+            "title": "Trombi",
+            "icon": "images/trombi.png"
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "platforms": [
+            "darwin"
+          ],
+          "config": {
+            "repository": {
+              "owner": "tonyyy53",
+              "name": "Trombi"
+            },
+            "prerelease": false,
+            "draft": true
+          }
+        }
+      ]
+    }
+  }
+}

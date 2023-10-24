@@ -1,0 +1,104 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <title>Apercu</title>
+  <script>
+    let $ = require('jquery');
+    require('popper.js');
+    require('bootstrap');
+  </script>
+
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style_apercu.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+  <div class="row m-1">
+    <div class="col-4 px-0 bg-light border">
+      <div class="col-12">
+        <label class="m-0">Dossier des photos</label>
+      </div>
+      <div class="col-12">
+        <div class="row ">
+          <div class="col-10 pe-0">
+            <input type="text" class="form-control" name="chemin" id="chemin">
+          </div>
+          <div class="col-2 px-1">
+            <button class="btn btn-primary" id="choix_photos_btn"><i class="bi bi-folder"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <label class="m-0">Titre</lablel>
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" name="titre" id="titre">
+      </div>
+      <div class="col-12">
+        <label class="m-0">Sous-titre</lablel>
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" name="soustitre" id="soustitre">
+      </div>
+
+      <div class="row m-1">
+        <div class="col-6 p-0">
+          <label class="m-0">Nb en largeur</lablel>
+            <input type="number" class="form-control" name="largeur" id="largeur" value=4 min="1" max="10">
+
+        </div>
+        <div class="col-6 p-0">
+          <label class="m-0">Nb en hauteur</lablel>
+            <input type="number" class="form-control" name="hauteur" id="hauteur" value=5 min="1" max="10">
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="cadrillage">
+          <label class="form-check-label" for="cadrillage">Cadrillage</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="centrer">
+          <label class="form-check-label" for="centrer">Centrer le titre</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <hr>
+        <div class="row">
+          <div class="col-5" id="pages_pdf"></div>
+          <div class="col-7">
+            <button class="btn btn-outline-primary btn-sm" id="pdf_prem"><i class="bi bi-skip-start-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="pdf_prec"><i class="bi bi-rewind-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="pdf_suiv"><i class="bi bi-fast-forward-fill"></i></button>
+            <button class="btn btn-outline-primary btn-sm" id="pdf_dern"><i class="bi bi-skip-forward-fill"></i></button>
+          </div>                  
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <hr>
+        <div class="row">
+          <div class="col-md-12 buttons">
+            <button class="btn btn-primary col-md-8 my-2" id="pdf"><i class="bi bi-file-pdf"></i> Afficher le PDF</button><br>
+            <button class="btn btn-secondary col-md-8 my-2" id="fermer_btn"><i class="bi bi-x-circle"></i> Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="border m-0 p-0" id="pdf_apercu">
+        <div class="page" id="page1"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./apercu.js"></script>
+</body>
+
+</html>
