@@ -46,7 +46,7 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-zip",
+          "name": "@electron-forge/maker-dmg",
           "config": {
             "title": "Trombi",
             "icon": "images/trombi.png"

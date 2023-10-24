@@ -1,0 +1,98 @@
+.jumbotron{
+    margin:1rem 0px 0px 0px;
+    padding: 2rem 1rem;
+    border-radius:10px;
+      background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.25), 
+    rgba(10, 27, 126, 0.45)
+  ),
+
+
+ /*url(https://source.unsplash.com/1600x1050/?nature);*/
+  url();
+  
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:rgb(0, 0, 0) !important;
+  
+  }
+
+
+
+.card { background-color: rgba(255, 255, 255, 0.8); }
+.card-body {
+    position:relative;
+    padding-top: 30px;
+  }
+.numberCircle {
+    width: 39.6px;
+    height: 39.6px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 21.6px;
+    border: 2px solid #0275d8;
+    color:white;
+    background:#0275d8;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%)
+
+}
+
+.apercu {
+    height: auto;
+    position: relative;
+    width: 100%; 
+    
+}
+#recadree_box {  
+  position: relative;
+  width: 100%; 
+  overflow: hidden;  
+}
+
+
+.original {
+  user-select: none;
+    position: absolute;
+    width: 100%;    
+    top: 0;
+    margin: 0;
+    left: 0;        
+}
+
+.recardree_s {
+  user-select: none;
+    position: absolute;
+    width: 100%;    
+    top: 0;
+    margin: 0;
+    left: 0;        
+}
+
+#recadree {
+  width: 100%;  
+  top: 0;
+  margin: 0;
+  left: 0;   
+  transform-origin: top left;   
+
+}
+
+.cache {     
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #0275d8;
+    border-radius: 90% / 70%;
+    opacity: 0.7;   
+}
+#recadree_img
+{
+  width: 100%;
+
+}
