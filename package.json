@@ -12,11 +12,11 @@
   "author": "",
   "license": "ISC",
   "mac": {
-    "icon": "./images/trombi.icns",
+    "icon": "images/trombi.icns",
     "category": "public.app-category.utilities"
   },
   "win": {
-    "icon": "./images/trombi.png"
+    "icon": "images/trombi.png"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
@@ -33,6 +33,7 @@
     "appdmg": "^0.6.6",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
+    "electron-squirrel-startup": "^1.0.0",
     "fix-path": "^3.0.0",
     "html-to-image": "^1.11.11",
     "jquery": "^3.7.1",
@@ -41,8 +42,26 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "osxSign": {},
+        "osxNotarize": {
+          "tool": "notarytool",
+          "appleId": "tony.couapel@gmail.com",
+          "appleIdPassword": "lyno-nvcv-xciq-ouhv",
+          "teamId": "Tony COUAPEL"
+        },
+        "title": "Trombi",
+        "icon": "images/trombi"
+      },
       "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "Trombi",
+            "exe": "Trombi.exe",
+            "setupExe": "Trombi.Setup.exe"
+          }
+        },
         {
           "name": "@electron-forge/maker-dmg",
           "config": {
@@ -55,7 +74,7 @@
         {
           "name": "@electron-forge/publisher-github",
           "platforms": [
-            "darwin"
+            "win"
           ],
           "config": {
             "repository": {

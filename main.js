@@ -83,10 +83,9 @@ function creatChild()
     show: false,
     width: 945,
     height: 900,
-    webPreferences: {
-    
-        preload: path.join(__dirname, 'preload.js'),
-          nodeIntegration: true,
+    webPreferences: {    
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true
     }
@@ -102,7 +101,7 @@ function createWindow() {
     height: 300,
     x:centre,
     y:0,
-
+    icon: 'images/trombi.png',
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
