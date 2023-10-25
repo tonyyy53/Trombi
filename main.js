@@ -13,13 +13,13 @@ const isMac = process.platform === 'darwin'
 // Menu de l'application Mac OS et PC
 const template = [
   ...(isMac ? [{
-    label: 'AnonyCop',
+    label: 'Trombi',
     submenu : [
       { role: 'about',label: 'À propos de Trombi' },
       { type: 'separator' },
       { role: 'services' },
       { type: 'separator' },
-      { role: 'hide',label:'Masquer AnonyCop' },
+      { role: 'hide',label:'Masquer Trombi' },
       { role: 'hideothers',label:'Masquer les autres' },
       { role: 'unhide',label:'Tout afficher' },
       { type: 'separator' },
@@ -130,9 +130,8 @@ app.whenReady().then(() => {
   var dimensions = mainScreen.size;
   centre=(dimensions.width-1024)/2
   createWindow()
- /* const menu = Menu.buildFromTemplate(template)  
-  Menu.setApplicationMenu(menu)*/
-
+  const menu = Menu.buildFromTemplate(template)  
+  Menu.setApplicationMenu(menu)
 
   app.on('activate', function () {
     // Sur macOS il est d'usage de recréer une fenêtre dans l'application quand

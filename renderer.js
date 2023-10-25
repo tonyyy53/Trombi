@@ -1,4 +1,3 @@
-require('update-electron-app')()
 const {ipcRenderer} = require('electron')
 const fs = require('fs');
 const path = require('path')
@@ -338,16 +337,10 @@ function recadrer()
       
       $('#recadree_box').height(haut_recadree)
       $('#recadree').css('object-fit', 'contain')
-      //$('.recadree').width(1000)
-      //$('.recadree').css('object-position', '-'+select_deb_x+'px -'+select_deb_y+'px')
   
       $('#recadree').css('transform', 'translate('+depX+'px,'+depY+'px) scale('+scale+')')
       $('#recadree_img').attr('src',path.normalize(chemin_photos+photos[photo_aff]));
-      //$('#recadree').css('transform', 'scale('+scale+') ')
-      //$('#info').html('DepX Y '+depX+'/'+depY)
-      //$('#info').html('haut_recadree : '+haut_img)
     
-
 }
 
 function recadrer_defaut()
@@ -361,20 +354,14 @@ function recadrer_defaut()
       scale_temp=larg_app/larg_recadree
       scale=scale_temp.toFixed(2);
 
-    
       //Decalage
       gauche=0;
       haut=0;
   
-  
-      //depX=parseInt(-gauche*scale,10)   
-      //depY=parseInt(-haut*scale,10)
       depX=0;depY=0;
       
       $('#recadree_box').height(haut_recadree)
       $('#recadree').css('object-fit', 'contain')
-      //$('.recadree').width(1000)
-      //$('.recadree').css('object-position', '-'+select_deb_x+'px -'+select_deb_y+'px')
       photo_recardee=path.normalize(chemin_photos_recadrees+photos[photo_aff]);
       console.log(photo_recardee)
       fs.access(photo_recardee, fs.constants.F_OK, (erreur) => {
@@ -391,11 +378,6 @@ function recadrer_defaut()
 
 
 
-      //$('#recadree_img').attr('src',path.normalize(chemin_photos_recadrees+fichier_img));
-      //$('#recadree').css('transform', 'scale('+scale+') ')
-    //  $('#info').html('DepX Y '+depX+'/'+depY)
-     // $('#info').html('haut_recadree : '+haut_img)
-
 }
 
 function affiche_original(fichier_img)
@@ -408,8 +390,7 @@ function affiche_original(fichier_img)
     $('#original_img').attr('src',path.normalize(chemin_photos+fichier_img));
 
     recadrer_defaut()
-    //$('#recadree_img').attr('src',path.normalize(chemin_photos_recadrees+fichier_img));
-    //alert(chemin_photos_recadrees+fichier_img)
+
     nom_etu=fichier_img.split('.');
     $('#identite').val(nom_etu[0])
     $('#ext').val(nom_etu[1])
